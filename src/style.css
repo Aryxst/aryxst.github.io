@@ -19,24 +19,29 @@ body {
  background-color: var(--bg-default);
  margin: 0;
 }
-/* Fonts */
-.poppins-light-italic {
- font-weight: 200;
- font-style: italic;
-}
 /* Poppins extra bold */
 h1 {
  font-weight: 800;
  font-style: normal;
 }
-.poppins-regular {
- font-weight: 400;
- font-style: normal;
+path[stroke] {
+ stroke-dasharray: 1000;
+ stroke-dashoffset: 1000;
+ animation: dash 5s linear forwards;
 }
-#avatar {
- z-index: 999;
+@keyframes dash {
+ to {
+  stroke-dashoffset: 0;
+ }
 }
-
+@keyframes fadeIn {
+ 0% {
+  opacity: 0;
+ }
+ 100% {
+  opacity: 1;
+ }
+}
 @keyframes up-and-down {
  0%,
  100% {
@@ -44,23 +49,5 @@ h1 {
  }
  50% {
   transform: translateY(-10px);
- }
-}
-@keyframes shake {
- 0%,
- 100% {
-  transform: translateX(0);
- }
- 50% {
-  transform: translateX(10px);
- }
-}
-@keyframes wave {
- 0%,
- 100% {
-  transform: rotate(0);
- }
- 50% {
-  transform: rotate(-20deg);
  }
 }
