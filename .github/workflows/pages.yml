@@ -28,7 +28,9 @@ jobs:
    - name: Install Dependencies 🔧
      run: bun install
    - name: Build 🏗️
-     run: bun run --bun build
+     run: |
+      bun run --bun build
+      rm -rf ./src/style.css
    - name: Disable Jekyll
      run: touch ./src/.nojekyll
    - name: Upload artifact
