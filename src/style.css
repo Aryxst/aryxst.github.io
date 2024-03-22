@@ -24,16 +24,6 @@ h1 {
  font-weight: 800;
  font-style: normal;
 }
-path[stroke] {
- stroke-dasharray: 1000;
- stroke-dashoffset: 1000;
- animation: dash 5s linear forwards;
-}
-@keyframes dash {
- to {
-  stroke-dashoffset: 0;
- }
-}
 @keyframes fadeIn {
  0% {
   opacity: 0;
