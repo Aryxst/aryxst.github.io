@@ -26,7 +26,7 @@ jobs:
      with:
       bun-version: latest
    - name: Install Dependencies 🔧
-     run: bun install
+     run: bun install --production
    - name: Build 🏗️
      run: |
       bun run --bun build
