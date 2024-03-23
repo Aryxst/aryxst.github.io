@@ -2,6 +2,13 @@ import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 export default {
  content: ['./src/index.html'],
+ theme: {
+  extend: {
+   screens: {
+    tbl: '813px',
+   },
+  },
+ },
  plugins: [
   require('autoprefixer'),
   plugin(function ({ addBase, theme }) {
