@@ -24,6 +24,9 @@ h1 {
  font-weight: 800;
  font-style: normal;
 }
+.hero-subtitle {
+ max-width: 557px;
+}
 @keyframes fadeIn {
  0% {
   opacity: 0;
