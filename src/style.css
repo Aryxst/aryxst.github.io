@@ -16,10 +16,9 @@ body {
  font-family: 'Poppins', sans-serif;
  font-size: 1.5em;
  color: white;
- background-color: var(--bg-default);
+ background: var(--bg-default);
  margin: 0;
 }
-/* Poppins extra bold */
 h1 {
  font-weight: 800;
  font-style: normal;
@@ -43,4 +42,12 @@ h1 {
  50% {
   transform: translateY(-10px);
  }
+}
+
+.roblox_project-buttons > button {
+ @apply rounded-lg bg-[var(--bg-default)] p-[6px] text-sm sm:text-base;
+}
+
+.roblox_project-title {
+ text-transform: uppercase;
 }
