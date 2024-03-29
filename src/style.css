@@ -43,11 +43,6 @@ h1 {
   transform: translateY(-10px);
  }
 }
-
-.roblox_project-buttons > button {
+.roblox_project-buttons > a {
  @apply rounded-lg bg-[var(--bg-default)] p-[6px] text-sm sm:text-base;
-}
-
-.roblox_project-title {
- text-transform: uppercase;
 }
