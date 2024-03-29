@@ -18,6 +18,7 @@
   <meta property="og:image" content="https://aryxst.github.io/assets/aryxst.webp" />
   <meta property="og:url" content="https://aryxst.github.io/" />
   <meta property="og:type" content="website" />
+  <!-- i put the essential styles in the page for performance reasons -->
   <style>
    @font-face {
     font-family: 'Poppins';
@@ -38,7 +39,12 @@
   </style>
  </head>
  <body>
+  <!-- sm stands for larger than 640px -->
+
+  <!-- Height of the section is full screen, so that it doesn't change when the screen is resized. Flexes content to the center on small screens, and aligns it to start(by default) on larger screens than sm -->
   <section class="flex h-screen w-screen items-center sm:justify-center">
+   <!-- Height of the div is 50vh, so that it doesn't change when the screen is resized. On small screens put the avatar image before the text, on larger screen put the text on the left and the avatar on the right -->
+   <!-- Play a fading animation on load-->
    <div class="flex min-h-[50vh] animate-[fadeIn_2s_1] flex-wrap items-center justify-center text-wrap sm:flex-row-reverse">
     <img width="256" height="256" src="assets/aryxst.webp" alt="My avatar" class="flex h-auto animate-[up-and-down_3s_infinite] rounded-full drop-shadow-[0_20px_20px_rgba(0,0,0,0.25)]" />
     <div class="max-tbl:text-center">
@@ -46,7 +52,10 @@
       I&apos;m <span class="text-[var(--text-important)]">Aryxst</span>. A UX/UI Design<br />
       enthusiast and JS Programmer.
      </h1>
+     <!-- on large screens the text is large, on small screens it is extra -->
      <p class="hero-subtitle mt-4 text-xl text-[var(--text-subtitle)] sm:text-lg">&quot;I'm striving to achieve a unique design aesthetic that combines glasmorphic, sketchy, minimalistic, and cartoony elements.&quot;</p>
+     <!-- this are the social media links, on small screens they are centered and on large screens they are next to each other starting from the left(by default) -->
+     <!-- i put the svgs directly in the page for performance reasons -->
      <div class="mt-6 inline-flex gap-4 max-tbl:justify-center">
       <a href="//github.com/aryxst" aria-label="Github Profile" class="flex items-center gap-2 rounded-full px-4 py-2">
        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
