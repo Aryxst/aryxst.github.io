@@ -1,2 +1,2 @@
 > [!NOTE]
-> https://pagespeed.web.dev/analysis/https-aryxst-github-io/c0jx277kms
+> https://pagespeed.web.dev/analysis/https-aryxst-github-io/2w325i1cn2?form_factor=mobile
