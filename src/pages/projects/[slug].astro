@@ -1,0 +1,61 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+import Layout from '../../layouts/Layout.astro';
+import { SEO } from 'astro-seo';
+import { Image } from 'astro:assets';
+import ProjectRelations from '../../components/ProjectRelations.astro';
+import '@fontsource/poppins/600.css';
+
+interface Props {
+ entry: CollectionEntry<'projects'>;
+}
+// This is a dynamic route that generates a page for every Markdown file in src/content/
+// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
+// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
+export async function getStaticPaths() {
+ const projects = await getCollection('projects');
+ return projects.map((entry) => ({
+  params: { slug: entry.slug },
+  props: { entry },
+ }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<SEO
+ title={entry.data.title}
+ description={entry.data.description}
+ canonical={`https://aryxst.github.io/projects/${entry.slug}`}
+ openGraph={{
+  basic: {
+   title: entry.data.title,
+   type: 'Thumbnail',
+   image: entry.data.thumbnailImage,
+  },
+ }}
+ extend={{
+  meta: [
+   { name: 'title', content: entry.data.title },
+   { name: 'description', content: entry.data.description },
+  ],
+ }}
+/>
+<Layout title={entry.data.title}>
+ <div id='content' class='prose dark:prose-invert mx-auto prose-p:text-base prose-h3:pt-6 prose-h3:text-lg py-4'>
+  <Image src={entry.data.thumbnailImage} alt={entry.data.title} width={720} height={405} />
+  <ProjectRelations role={entry.data.role} teamType={entry.data.teamType} creationDate={entry.data.creationDate} />
+  {
+   entry.data.tags && (
+    <ul>
+     {entry.data.tags.map((tag) => (
+      <li>{tag}</li>
+     ))}
+    </ul>
+   )
+  }
+  <Content />
+ </div>
+</Layout>

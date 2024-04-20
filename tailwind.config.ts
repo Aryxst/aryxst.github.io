@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 export default {
- content: ['./src/**/*.html'],
+ content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
  theme: {
   extend: {
    screens: {
@@ -11,6 +11,7 @@ export default {
  },
  plugins: [
   require('autoprefixer'),
+  require('@tailwindcss/typography'),
   plugin(function ({ addBase, theme }) {
    addBase({
     h1: { fontSize: '32px', lineHeight: '44.8px' },
