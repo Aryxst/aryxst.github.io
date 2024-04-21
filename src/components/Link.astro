@@ -1,0 +1,20 @@
+---
+import { tv } from 'tailwind-variants';
+import { buttonStyles } from './Button.astro';
+
+export interface Props {
+ href: string;
+ type?: keyof typeof linkVariants.variants.type;
+}
+export const linkVariants = tv({
+ variants: {
+  type: {
+   button: buttonStyles(),
+  },
+ },
+});
+
+const { href, type, ...props } = Astro.props;
+---
+
+<a class={linkVariants({ type })} href={href} {...props}><slot /></a>

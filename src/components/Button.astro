@@ -1,0 +1,10 @@
+---
+import { tv, type VariantProps } from 'tailwind-variants';
+
+export const buttonStyles = tv({
+ base: 'rounded-md border border-[var(--steel-blue)] bg-[var(--off)] p-2',
+});
+type ButtonProps = VariantProps<typeof buttonStyles>;
+---
+
+<button></button>
