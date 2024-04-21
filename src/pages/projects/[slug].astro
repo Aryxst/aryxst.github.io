@@ -25,28 +25,22 @@ const { Content } = await entry.render();
 
 <SEO
  title={`${entry.data.title} &mdash; Aryxst`}
+ canonical={Astro.url.href}
  description={entry.data.description}
- canonical={`https://aryxst.github.io/projects/${entry.slug}`}
  openGraph={{
   basic: {
    title: entry.data.title,
    type: 'website',
-   url: `https://aryxst.github.io/projects/${entry.slug}`,
-   image: entry.data.thumbnailImage || Astro.url.origin + '/aryxst.jpg',
+   url: Astro.url.href,
+   image: entry.data.thumbnailImage.startsWith('/') ? Astro.url.origin + entry.data.thumbnailImage : entry.data.thumbnailImage || Astro.url.origin + '/aryxst.jpg',
   },
- }}
- extend={{
-  meta: [
-   { name: 'title', content: entry.data.title },
-   { name: 'description', content: entry.data.short_description },
-  ],
  }}
 />
 <Layout title={`${entry.data.title} &mdash; Aryxst`}>
  <ContentContainer>
   <h3>{entry.data.title}</h3>
   <p>{entry.data.description}</p>
-  <figure class='select my-12'><Image src={entry.data.thumbnailImage} alt={entry.data.title} width={720} height={405} />{entry.data.image_description && <figcaption class='mt-3 text-center text-sm text-neutral-500'>{entry.data.image_description}</figcaption>}</figure>
+  <figure class='select my-12'><Image src={entry.data.thumbnailImage} alt={entry.data.title} width={720} height={405} />{entry.data.image_description && <figcaption class='mt-3 text-center text-sm text-[var(--tw-prose-body)]'>{entry.data.image_description}</figcaption>}</figure>
   <ProjectRelations role={entry.data.role} teamType={entry.data.teamType} creationDate={entry.data.creationDate} />
   {
    entry.data.tags && (

@@ -2,9 +2,24 @@
 import Layout from '../../layouts/Layout.astro';
 import ContentContainer from '../../components/ContentContainer.astro';
 import ContentList from '../../components/ContentList.astro';
+import { SEO } from 'astro-seo';
+const title = 'Projects — Aryxst';
 ---
 
-<Layout title='Projects — Aryxst'>
+<SEO
+ {title}
+ canonical={Astro.url}
+ description='My personal projects.'
+ openGraph={{
+  basic: {
+   title,
+   type: 'website',
+   url: Astro.url.href,
+   image: Astro.url.origin + '/aryxst.jpg',
+  },
+ }}
+/>
+<Layout {title}>
  <ContentContainer>
   <div class='pb-12'>
    <h3>Projects</h3>

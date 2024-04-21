@@ -1,10 +1,24 @@
 ---
+import { SEO } from 'astro-seo';
 import Layout from '../layouts/Layout.astro';
-
 import '@fontsource/poppins/800.css';
+const title = 'Aryxst(Old Website)';
 // 400+800
 ---
 
+<SEO
+ {title}
+ canonical={Astro.url}
+ description="I'm Aryxst. A UX/UI Design enthusiast and JS Programmer."
+ openGraph={{
+  basic: {
+   title,
+   type: 'website',
+   url: Astro.url.origin,
+   image: Astro.url.origin + '/aryxst.jpg',
+  },
+ }}
+/>
 <Layout title='Aryxst(Old Website)' noNavbar>
  <main>
   <section class='flex h-screen w-screen items-center sm:justify-center'>

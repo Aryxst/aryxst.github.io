@@ -11,24 +11,13 @@ interface Props {
 const { title, noNavbar } = Astro.props;
 ---
 
-<!doctype html>
 <html lang='en'>
  <head>
   <title>{title}</title>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width' />
   <link rel='icon' type='image/jpg' href={`${Astro.url.origin}/aryxst.jpg`} />
-  <link rel='canonical' href={Astro.url.href} />
-  <meta name='description' content="I'm Aryxst. A UX/UI Design enthusiast and JS Programmer." />
-  <meta name='author' content='Aryxst' />
-  <meta name='keywords' content='Aryxst, Portfolio, UI/UX Designer, Frontend Developer, Backend Developer, React, Bun, JavaScript' />
-  <meta name='robots' content='index, follow' />
-  <meta property='og:title' content={title || 'Aryxst'} />
-  <meta property='og:description' content="I'm Aryxst. A UX/UI Design enthusiast and JS Programmer." />
   <meta name='theme-color' content='#49494942' />
-  <meta property='og:image' content={`${Astro.url.origin}/aryxst.jpg`} />
-  <meta property='og:url' content={Astro.url.href} />
-  <meta property='og:type' content='website' />
   <meta name='generator' content={Astro.generator} />
   <ViewTransitions />
  </head>
