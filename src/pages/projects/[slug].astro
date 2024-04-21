@@ -5,8 +5,10 @@ import { SEO } from 'astro-seo';
 import Layout from '../../layouts/Layout.astro';
 import ProjectRelations from '../../components/ProjectRelations.astro';
 import ContentContainer from '../../components/ContentContainer.astro';
+import Tag from '../../components/Tag.astro';
 import '@fontsource/poppins/600.css';
 // 300+600
+
 interface Props {
  entry: CollectionEntry<'projects'>;
 }
@@ -49,11 +51,14 @@ const { Content } = await entry.render();
   <ProjectRelations role={entry.data.role} teamType={entry.data.teamType} creationDate={entry.data.creationDate} />
   {
    entry.data.tags && (
-    <ul>
-     {entry.data.tags.map((tag) => (
-      <li>{tag}</li>
-     ))}
-    </ul>
+    <div class='mb-16'>
+     <h2>Tags</h2>
+     <ul class='not-prose flex flex-wrap gap-2'>
+      {entry.data.tags.map((tag) => (
+       <Tag>{tag}</Tag>
+      ))}
+     </ul>
+    </div>
    )
   }
 
