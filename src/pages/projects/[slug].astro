@@ -7,7 +7,7 @@ import ProjectRelations from '../../components/ProjectRelations.astro';
 import ContentContainer from '../../components/ContentContainer.astro';
 import Tag from '../../components/Tag.astro';
 import '@fontsource/poppins/600.css';
-// 300+600
+// 400+600
 
 interface Props {
  entry: CollectionEntry<'projects'>;
@@ -61,6 +61,6 @@ const { Content } = await entry.render();
    )
   }
 
-  <Content />
+  <div id='render'><Content /></div>
  </ContentContainer>
 </Layout>
