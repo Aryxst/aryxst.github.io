@@ -1,12 +1,14 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import '@fontsource/poppins/300.css';
+import Navbar from '../components/Navbar.astro';
 
 interface Props {
  title: string;
+ noNavbar?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, noNavbar } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,8 +17,8 @@ const { title } = Astro.props;
   <title>{title}</title>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width' />
-  <link rel='icon' type='image/webp' href='https://aryxst.github.io/assets/aryxst.webp' />
-  <link rel='canonical' href='https://aryxst.github.io/' />
+  <link rel='icon' type='image/jpg' href={`${Astro.url.origin}/aryxst.jpg`} />
+  <link rel='canonical' href={Astro.url.href} />
   <meta name='description' content="I'm Aryxst. A UX/UI Design enthusiast and JS Programmer." />
   <meta name='author' content='Aryxst' />
   <meta name='keywords' content='Aryxst, Portfolio, UI/UX Designer, Frontend Developer, Backend Developer, React, Bun, JavaScript' />
@@ -24,21 +26,18 @@ const { title } = Astro.props;
   <meta property='og:title' content={title || 'Aryxst'} />
   <meta property='og:description' content="I'm Aryxst. A UX/UI Design enthusiast and JS Programmer." />
   <meta name='theme-color' content='#49494942' />
-  <meta property='og:image' content='https://aryxst.github.io/assets/aryxst.webp' />
-  <meta property='og:url' content='https://aryxst.github.io/' />
+  <meta property='og:image' content={`${Astro.url.origin}/aryxst.jpg`} />
+  <meta property='og:url' content={Astro.url.href} />
   <meta property='og:type' content='website' />
   <meta name='generator' content={Astro.generator} />
   <ViewTransitions />
  </head>
  <body>
   <slot />
+  {!noNavbar && <Navbar />}
   <style is:global>
    :root {
     --bg-default: #0e1217;
-    --bg-off: #49494942;
-    --bg--off_accented: #171717;
-    --text-important: #8790c0;
-    --text-subtitle: #bdbdbd;
    }
    body,
    *:after,
@@ -51,27 +50,35 @@ const { title } = Astro.props;
     background: var(--bg-default);
     margin: 0;
    }
-   h1 {
-    font-weight: 800;
-    font-style: normal;
-   }
-   @keyframes fadeIn {
-    0% {
-     opacity: 0;
-    }
-    100% {
-     opacity: 1;
-    }
-   }
-   @keyframes up-and-down {
-    0%,
-    100% {
-     transform: translateY(0);
-    }
-    50% {
-     transform: translateY(-10px);
-    }
-   }
   </style>
+  {
+   /* TODO: Add link animation on route change
+  <script is:inline>
+   document.addEventListener('astro:before-swap', (e) => {
+    const path = new URL(location.href).pathname;
+    localStorage.setItem('last-path', path);
+   });
+   document.addEventListener('astro:after-swap', (e) => {
+    const previousPath = localStorage.getItem('last-path');
+    const currentPath = new URL(location.href).pathname;
+    if (previousPath === currentPath) return;
+    const navLinks = document.querySelectorAll('.nav-link>a');
+    navLinks.forEach((link) => {
+     const href = link.getAttribute('href');
+
+     if (previousPath === '/' && href === '/') {
+      link.parentElement.setAttribute('data-active', 'true');
+      setTimeout(() => {
+       link.parentElement.setAttribute('data-active', 'false');
+      }, 250);
+     } else if (previousPath.includes(href && href !== '/')) {
+      link.parentElement.setAttribute('data-active', 'true');
+      setTimeout(() => {
+       link.parentElement.setAttribute('data-active', 'false');
+      }, 250);
+     }
+    });
+   });*/
+  }
  </body>
 </html>

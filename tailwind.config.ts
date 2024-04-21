@@ -12,7 +12,7 @@ export default {
  plugins: [
   require('autoprefixer'),
   require('@tailwindcss/typography'),
-  plugin(function ({ addBase, theme }) {
+  plugin(function ({ addBase }) {
    addBase({
     h1: { fontSize: '32px', lineHeight: '44.8px' },
     h2: { fontSize: '20px' },

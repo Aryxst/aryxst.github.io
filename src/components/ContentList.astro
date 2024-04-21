@@ -1,0 +1,30 @@
+---
+import { type CollectionKey, type CollectionEntry, getCollection } from 'astro:content';
+import '@fontsource/poppins/600.css';
+type Props = {
+ listType: CollectionKey;
+ disabled?: boolean;
+};
+const { listType, disabled } = Astro.props;
+
+const data = (await getCollection(listType)).sort((a, b) => b.data.creationDate.valueOf() - a.data.creationDate.valueOf()) as CollectionEntry<typeof listType>[];
+---
+
+{
+ data.length ? (
+  <ul class='not-prose mx-auto max-w-[65ch]'>
+   {data.map((entry) => (
+    <li class={`rounded-xl ${disabled && 'cursor-not-allowed'}`}>
+     <a href={`/projects/${entry.slug}`} class={`-my-2 mt-[0px] flex select-none items-center gap-2.5 rounded-xl py-4 pr-4 ${disabled && 'pointer-events-none'}`}>
+      <p class='font-semibold dark:text-neutral-300'>{entry.data.title}</p>
+      <p class='hidden md:block dark:text-neutral-500'>{entry.data.short_description}</p>
+      <div class='h-px bg-neutral-500/40 dark:bg-neutral-200/40' style='flex: 1 1 0%; opacity: 0.4;' />
+      <p class='truncate text-neutral-500'>{entry.data.creationDate.getFullYear()}</p>
+     </a>
+    </li>
+   ))}
+  </ul>
+ ) : (
+  <p>Nothing here :&lpar;</p>
+ )
+}

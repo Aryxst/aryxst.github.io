@@ -1,29 +1,29 @@
 {
-  "name": "test",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "expose": "ssh -R jessieodeh:80:localhost:3000 serveo.net"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^2.3.1",
-    "@astrojs/sitemap": "^3.1.2",
-    "@astrojs/tailwind": "^5.1.0",
-    "@fontsource/poppins": "^5.0.13",
-    "astro": "^4.5.17",
-    "astro-seo": "^0.8.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.12",
-    "@types/bun": "^1.0.12",
-    "autoprefixer": "^10.4.19",
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.13",
-    "tailwindcss": "^3.4.3"
-  }
+ "name": "aryxst-portfolio",
+ "type": "module",
+ "version": "1.0.0",
+ "scripts": {
+  "dev": "astro dev",
+  "start": "astro dev",
+  "build": "astro build",
+  "preview": "astro preview",
+  "astro": "astro",
+  "expose": "ssh -R jessieodeh:80:localhost:3000 serveo.net"
+ },
+ "dependencies": {
+  "@astrojs/mdx": "^2.3.1",
+  "@astrojs/sitemap": "^3.1.2",
+  "@astrojs/tailwind": "^5.1.0",
+  "@fontsource/poppins": "^5.0.13",
+  "astro": "^4.5.17",
+  "astro-seo": "^0.8.3"
+ },
+ "devDependencies": {
+  "@tailwindcss/typography": "^0.5.12",
+  "@types/bun": "^1.0.12",
+  "autoprefixer": "^10.4.19",
+  "prettier-plugin-astro": "^0.13.0",
+  "prettier-plugin-tailwindcss": "^0.5.13",
+  "tailwindcss": "^3.4.3"
+ }
 }
