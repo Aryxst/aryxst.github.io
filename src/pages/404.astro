@@ -1,10 +1,11 @@
 ---
 import { SEO } from 'astro-seo';
 import Link from '../components/Link.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Base.astro';
 import '@fontsource/poppins/800.css';
-const title = 'Not Found — Aryxst';
 // 400+800
+
+const title = 'Not Found — Aryxst';
 ---
 
 <SEO
@@ -20,7 +21,7 @@ const title = 'Not Found — Aryxst';
   },
  }}
 />
-<Layout {title}>
+<Layout {title} noNavbar>
  <main class='flex h-screen flex-col justify-center text-center'>
   <div>
    <div class='mb-5'>

@@ -1,9 +1,10 @@
 ---
 import { SEO } from 'astro-seo';
-import Layout from '../layouts/Layout.astro';
 import '@fontsource/poppins/800.css';
+import '@fontsource/poppins/300.css';
+// 300+800
+
 const title = 'Aryxst(Old Website)';
-// 400+800
 ---
 
 <SEO
@@ -19,9 +20,18 @@ const title = 'Aryxst(Old Website)';
   },
  }}
 />
-<Layout title='Aryxst(Old Website)' noNavbar>
- <main>
-  <section class='flex h-screen w-screen items-center sm:justify-center'>
+<html lang='en'>
+ <head>
+  <title>{title}</title>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width' />
+  <link rel='icon' type='image/jpg' href={`${Astro.url.origin}/aryxst-small.jpg`} />
+  <meta name='theme-color' content='#49494942' />
+  <meta name='generator' content={Astro.generator} />
+  <script is:inline defer src='https://analytics.us.umami.is/script.js' data-website-id='92161264-2fa5-42d4-a932-51851f9790bc'></script>
+ </head>
+ <body>
+  <main class='flex h-screen w-screen items-center sm:justify-center'>
    <div class='flex min-h-[50vh] animate-[fadeIn_2s_1] flex-wrap items-center justify-center text-wrap sm:flex-row-reverse'>
     <img width='256' height='256' src='/aryxst.jpg' alt='My avatar' class='flex h-auto animate-[up-and-down_3s_infinite] rounded-full drop-shadow-[0_20px_20px_rgba(0,0,0,0.25)]' />
     <div class='max-tbl:text-center'>
@@ -62,36 +72,47 @@ const title = 'Aryxst(Old Website)';
      </ul>
     </div>
    </div>
-  </section>
- </main>
-</Layout>
-<style>
- :root {
-  --text-important: #8790c0;
-  --text-subtitle: #bdbdbd;
- }
- body {
-  font-size: 1.5em;
- }
- h1 {
-  font-weight: 800;
-  font-style: normal;
- }
- @keyframes fadeIn {
-  0% {
-   opacity: 0;
+  </main>
+ </body>
+ <style>
+  :root {
+   --bg-default: #0e1217;
+   --text-important: #8790c0;
+   --text-subtitle: #bdbdbd;
   }
-  100% {
-   opacity: 1;
+  body {
+   font-family: 'Poppins', sans-serif;
+   font-size: 1.5em;
+   color: white;
+   background: var(--bg-default);
+   margin: 0;
+   font-weight: 400;
   }
- }
- @keyframes up-and-down {
-  0%,
-  100% {
-   transform: translateY(0);
+  body,
+  *:after,
+  *:before {
+   box-sizing: border-box;
   }
-  50% {
-   transform: translateY(-10px);
+  h1 {
+   font-weight: 800;
+   font-style: normal;
   }
- }
-</style>
+  @keyframes fadeIn {
+   0% {
+    opacity: 0;
+   }
+   100% {
+    opacity: 1;
+   }
+  }
+  @keyframes up-and-down {
+   0%,
+   100% {
+    transform: translateY(0);
+   }
+   50% {
+    transform: translateY(-10px);
+   }
+  }
+ </style>
+</html>

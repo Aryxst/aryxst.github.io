@@ -1,11 +1,11 @@
 ---
 import { SEO } from 'astro-seo';
-import Container from '../components/Container.astro';
-import Layout from '../layouts/Layout.astro';
-import { Content } from './about.mdx';
+import Layout from '../layouts/WithMDX.astro';
+import { Content } from '../mdx/about.mdx';
 import '@fontsource/poppins/600.css';
-const title = 'Aryxst';
 // 400+600
+
+const title = 'About — Aryxst';
 ---
 
 <SEO
@@ -21,8 +21,4 @@ const title = 'Aryxst';
   },
  }}
 />
-<Layout {title}>
- <Container>
-  <Content />
- </Container>
-</Layout>
+<Layout {title} {Content} />

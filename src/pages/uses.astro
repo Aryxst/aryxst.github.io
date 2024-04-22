@@ -1,18 +1,17 @@
 ---
 import { SEO } from 'astro-seo';
-import Container from '../components/Container.astro';
-import Layout from '../layouts/Layout.astro';
-import { Content } from './uses.mdx';
+import Layout from '../layouts/WithMDX.astro';
+import { Content } from '../mdx/uses.mdx';
 import '@fontsource/poppins/600.css';
-const title = 'Aryxst';
-
 // 400+600
+
+const title = 'Uses — Aryxst';
 ---
 
 <SEO
  {title}
  canonical={Astro.url}
- description="Hi, I'm Aryxst. I'm a very Junior Web Developer. I'm currently learning CSS Dynamic Styling as replacement of Javascript, and SolidJS & Astro."
+ description='This is the equipment I use for gaming, programming, everyday.'
  openGraph={{
   basic: {
    title,
@@ -22,8 +21,4 @@ const title = 'Aryxst';
   },
  }}
 />
-<Layout {title}>
- <Container>
-  <div id='render'><Content /></div>
- </Container>
-</Layout>
+<Layout {title} {Content} />

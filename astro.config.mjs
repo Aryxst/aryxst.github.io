@@ -6,6 +6,7 @@ import remarkCodeImport from 'remark-code-import';
 import remarkCodeTitle from 'remark-code-title';
 import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
+import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
@@ -43,6 +44,7 @@ export default defineConfig({
  },
  markdown: {
   remarkPlugins: [remarkToc, remarkCodeImport, remarkCodeTitle],
+  rehypePlugins: [rehypeKatex],
   gfm: true,
   syntaxHighlight: 'shiki',
   shikiConfig: {

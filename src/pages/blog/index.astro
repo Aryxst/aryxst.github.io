@@ -1,7 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Container from '../../components/Container.astro';
-import ContentList from '../../components/ContentList.astro';
+import Layout from '../../layouts/WithMDX.astro';
+import { Content } from '../../mdx/blog.mdx';
 import { SEO } from 'astro-seo';
 const title = 'Blog — Aryxst';
 ---
@@ -19,12 +18,9 @@ const title = 'Blog — Aryxst';
   },
  }}
 />
-<Layout {title}>
- <Container>
-  <div class='pb-12'>
-   <h3>Blog</h3>
-   <p>Posts are currently not available.</p>
-  </div>
-  <ContentList listType='blog' disabled />
- </Container>
-</Layout>
+<Layout {title} {Content} />
+<style is:inline>
+ #render > p:first-of-type {
+  padding-bottom: 48px;
+ }
+</style>

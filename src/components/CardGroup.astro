@@ -8,4 +8,4 @@ type Props = {
 const { data } = Astro.props;
 ---
 
-<ul class='not-prose flex flex-col flex-wrap justify-center gap-4 sm:flex-row sm:flex-wrap'>{data.map(({ title, description, href, image, variant, has }) => <Card title={title} description={description} href={href} image={image} variant={variant} has={has || 'image'} />)}</ul>
+<ul class='not-prose flex flex-col flex-wrap gap-4 sm:flex-row sm:flex-wrap'>{data.map(({ title, description, href, image, variant, has }) => <Card title={title} description={description} href={href} image={image} variant={variant} has={has || 'image'} />)}</ul>

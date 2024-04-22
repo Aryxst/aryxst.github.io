@@ -3,9 +3,20 @@ const pathname = Astro.url.pathname;
 ---
 
 <navbar class='fixed left-1/2 w-fit -translate-x-1/2 [&:not([data-hidden])]:bottom-5'
- ><ul class='bar flex h-10 items-center justify-center overflow-hidden rounded-full border border-[var(--steel-blue)] bg-[var(--off)]'>
-  <li class='nav-link w-20 p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={/* pathname === '/' ? 'true' : 'false' */ pathname === '/about' ? 'true' : 'false'}><a href='/about' data-astro-history='replace'>Home</a></li>
+ ><ul class='bar flex h-10 justify-center overflow-hidden rounded-full border border-[var(--steel-blue)] bg-[var(--off)]'>
+  <li class='nav-link w-20 p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname === '/' ? 'true' : 'false'}><a href='/' data-astro-history='replace'>Home</a></li>
   <li class='nav-link w-20 p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname.includes('/projects') ? 'true' : 'false'}><a href='/projects' data-astro-history='replace'>Projects</a></li>
   <li class='nav-link w-20 p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname.includes('/blog') ? 'true' : 'false'}><a href='/blog' data-astro-history='replace'>Blog</a></li>
+  <li class='sepatator' data-active={pathname.includes('/blog') ? 'true' : 'false'}></li>
+  <li class='nav-link w-10 p-2 text-center'>...</li>
  </ul>
 </navbar>
+
+<style>
+ .sepatator {
+  background: rgba(52, 56, 65, 1);
+  width: 1px;
+  display: block;
+  unicode-bidi: isolate;
+ }
+</style>

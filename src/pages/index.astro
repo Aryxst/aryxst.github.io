@@ -1,7 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
-import Container from '../components/Container.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/WithMDX.astro';
+import { Content } from '../mdx/index.mdx';
 import '@fontsource/poppins/600.css';
 const title = 'Aryxst';
 // 400+600
@@ -10,7 +10,7 @@ const title = 'Aryxst';
 <SEO
  {title}
  canonical={Astro.url}
- description="Hi, I'm Aryxst. I'm a very Junior Web Developer. I'm currently learning CSS Dynamic Styling as replacement of Javascript, and SolidJS & Astro."
+ description="Hi, I'm Aryxst!"
  openGraph={{
   basic: {
    title,
@@ -20,19 +20,4 @@ const title = 'Aryxst';
   },
  }}
 />
-<Layout {title}>
- <Container>
-  <h3>About Me</h3>
-  <p>Hi, I&apos;m Aryxst. I&apos;m a very Junior Web Developer. I&apos;m currently learning CSS Dynamic Styling as replacement of Javascript, and SolidJS & Astro.</p>
-  <h3>What I&apos;m working on</h3>
-  <p>I&apos;m currently working on various side-projects available on my Github.</p>
-  <h3>My Social Links</h3>
-  <ul>
-   <li><a href='https://github.com/aryxst'>Github</a></li>
-   <li><a href='https://www.roblox.com/users/2684480151/profile'>Roblox</a></li>
-   <li><a href='https://aryxst.itch.io/'>Itch</a></li>
-   <li><a href='https://www.youtube.com/channel/UC9PvCz99h1KhY-MV9-njT9Q'>Youtube</a></li>
-   <li><a href='https://twitter.com/aryxst'>Twitter</a></li>
-  </ul>
- </Container>
-</Layout>
+<Layout {title} {Content} />

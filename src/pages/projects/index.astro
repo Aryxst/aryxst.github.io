@@ -1,7 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Container from '../../components/Container.astro';
-import ContentList from '../../components/ContentList.astro';
+import Layout from '../../layouts/WithMDX.astro';
+import { Content } from '../../mdx/projects.mdx';
 import { SEO } from 'astro-seo';
 const title = 'Projects — Aryxst';
 ---
@@ -19,12 +18,9 @@ const title = 'Projects — Aryxst';
   },
  }}
 />
-<Layout {title}>
- <Container>
-  <div class='pb-12'>
-   <h3>Projects</h3>
-   <p>Some of my personal projects, also funny ones. Projects are currently not available.</p>
-  </div>
-  <ContentList listType='projects' disabled />
- </Container>
-</Layout>
+<Layout {title} {Content} />
+<style is:inline>
+ #render > p:first-of-type {
+  padding-bottom: 48px;
+ }
+</style>
