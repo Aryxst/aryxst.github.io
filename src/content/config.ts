@@ -10,7 +10,7 @@ export const collections = {
    creationDate: z.coerce.date(),
    tags: z.array(z.string()).optional(),
    role: z.string().optional().default('Developer'),
-   teamType: z.string().optional().default('Solo Project'),
+   teamType: z.string().optional().default('Solo'),
    heroImage: z.string().optional(),
    thumbnailImage: z.string(),
    image_description: z.string().optional(),
@@ -23,6 +23,9 @@ export const collections = {
    description: z.string(),
    short_description: z.string(),
    creationDate: z.coerce.date(),
+   tags: z.array(z.string()).optional(),
+   thumbnailImage: z.string(),
+   image_description: z.string().optional(),
   }),
  }),
 };
