@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ContentContainer from '../../components/ContentContainer.astro';
+import Container from '../../components/Container.astro';
 import ContentList from '../../components/ContentList.astro';
 import { SEO } from 'astro-seo';
 const title = 'Projects — Aryxst';
@@ -20,11 +20,11 @@ const title = 'Projects — Aryxst';
  }}
 />
 <Layout {title}>
- <ContentContainer>
+ <Container>
   <div class='pb-12'>
    <h3>Projects</h3>
    <p>Some of my personal projects, also funny ones. Projects are currently not available.</p>
   </div>
   <ContentList listType='projects' disabled />
- </ContentContainer>
+ </Container>
 </Layout>

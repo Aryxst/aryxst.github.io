@@ -1,0 +1,43 @@
+---
+import { tv, type VariantProps } from 'tailwind-variants';
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+ title: string;
+ description: string;
+ variant: CardProps;
+ href?: string;
+ image?: string;
+ has?: 'icon' | 'image';
+}
+// TODO: Add proper variants, only works with pc parts
+const cardStyles = tv({
+ base: 'flex h-80 sm:w-[calc(calc(var(--content-width)/2.25)-1em)] md:w-[calc(calc(var(--content-width)/2)-1em)] gap-1 rounded-lg px-4 flex-col bg-[var(--off)] border border-[var(--steel-blue)] w-full',
+ variants: {
+  size: {
+   full: 'w-full',
+  },
+ },
+});
+
+export type CardProps = VariantProps<typeof cardStyles>;
+const { title, description, href, image, variant, has } = Astro.props;
+---
+
+<li>
+ <a href={href} class={cardStyles(variant)}>
+  {
+   !has || has === 'image' ? (
+    <div class='flex h-[224px] w-fit items-center justify-center self-center pt-4'>
+     <img src={image} alt={title} class='h-auto w-48' />
+    </div>
+   ) : (
+    <div class='flex h-[224px] w-fit items-center justify-center self-center pt-4'>
+     <Icon name={image} class='size-48' />
+    </div>
+   )
+  }
+  <p class='text-xl font-semibold text-white md:text-2xl'>{title}</p>
+  <p class='dark:text-[var(--tw-prose-body)]'>{description}</p>
+ </a>
+</li>

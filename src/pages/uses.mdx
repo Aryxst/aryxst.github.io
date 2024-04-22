@@ -1,0 +1,89 @@
+import Card from '../components/Card.astro';
+import CardGroup from '../components/CardGroup.astro';
+
+# Uses
+
+This is the equipment I use for gaming, programming, everyday.
+
+## PC
+
+<CardGroup
+ data={[
+  {
+   title: 'MSI Optix G27C4',
+   description: '27" 170Hz Monitor',
+   href: 'https://www.amazon.com/MSI-G27C4-E2-FreeSync-Displayport/dp/B0B5HXFLV9/ref=sr_1_3?crid=228ZD2SM53PMY&dib=eyJ2IjoiMSJ9.6afbodvPCQiYOpBJ5hCCardGroup2y6qbRoqJQzEzMJg1AQaU6RAq6gPKxc0ExwlPxJBrxhahDk3dmaHFgW6BkYcN9Y_lehcBlISsKu_rJqECYwZTMXeTRGCtXkx-IzEBLV-8x0Mzf-b1MjwfZowdlO8nTU55Dovr55XR1e0d7iSa3isTzIf8wMwxAxiEnVFmG5pZp_berWZy-pIAgFxcT00T020PDOV58UwlTQcE_XzAXhc1PI.XeZrebHDJzrpG-LmROt206doysIrDjVhxicx-cTMhIk&dib_tag=se&keywords=MSI%2BOptix%2BG27C4%2B165hz&qid=1713782437&sprefix=msi%2Boptix%2Bg27c4%2B165hz%2Caps%2C147&sr=8-3&th=1',
+   image: '/assets/pc/monitor-g27c4.png',
+  },
+  {
+   title: 'RTX 3060 Ti',
+   description: 'Graphics Card',
+   href: 'https://www.amazon.com/NVIDIA-GeForce-Founders-Express-Graphics/dp/B08PW559LL/ref=sr_1_4?dib=eyJ2IjoiMSJ9.FxtPeoOmX-xyKuieJXs5_yWCardGroupZx1A9IL513d8ODerKNd55crHFrJ85SXzPD2eIuZfslTYrMaO6CEzZzznl0O1A3XaDaJxIa9kztABc7iN2T4VdDSaA5j66TAjlF_J3qUOsYgm0nmHbe8B2ViNlMWLexLyNjI8MLdHn4Ld-mUP8GMBU7ZbJdYEQSy_JDvv6HEK-80jz_6Yr07WdUiCcTKlsGfWe0SflwFMPRA4UDN_-s.17I8tcshF8PJDToI73NzxOqO1D6Cg2TzdT0T12QSyh8&dib_tag=se&keywords=nvidia+geforce+rtx+3060+ti+graphics+card&qid=1713781820&sr=8-4',
+   image: '/assets/pc/rtx-3060-ti.png',
+  },
+  {
+   title: 'i5 12400',
+   description: 'CPU',
+   href: 'https://www.amazon.com/Intel-i5-12400-Desktop-Processor-Cache/dp/B09NMPD8V2/ref=sr_1_1?crid=1F68XLU83AQO2&dib=eyJ2IjoiMSJ9.PZTgwhy-XBMMxhIbmkANllu84cRPXIFGzgpItLJ_8HCDMDgyqG2jc16vLLHAuNzn7su47kDi3yPwTH5j9TXshKPfTNzeXkkxSW3y_PsxQ_I_J9j6J3diZzRwHyllxoZwWNZ3WKzPlAHdfnNoOECSnTVry1BaRRkISf6lG5iBuDKh7LlqZG9HJz8M-oxTpqgMKsNWxSGqIm_SfUqy6xfoxy7VOSpWM8N1OXMcXnNOjAs.8bkAS0rD8vpoXdO7hb1rO09i0vhnXmTEwOcY8gXCY6k&dib_tag=se&keywords=i5+12400&qid=1713782308&sprefix=i5+12400%2Caps%2C166&sr=8-1',
+   image: '/assets/pc/i5-12400.png',
+  },
+  {
+   title: 'Lenovo DDR4 16 GB',
+   description: 'RAM',
+   href: 'https://www.amazon.com/Crucial-16GB-Laptop-Memory-CT16G4SFRA32A/dp/B08C511GQH/ref=sr_1_2?crid=3IP0J4JODB3QM&dib=eyJ2IjoiMSJ9.R7-RhIKTfTYo10IPK8V_HraHr6m1HvtTXCrdSYLMuK2f0V3DmLIL3Xdj-BcZDkpsUNBpGMK_fCfGp-xFnIbTxEgYK3AtT-Q8XZrmllKPJjlrtG0LcKoJb_pPQaIx61AEE1s652HIjKmy_CTvkUhavyaL2z8Ax5nBStnEaoIoVExxtb78OWc_OM_b6-X_FA1vIEjxSxEWUjjYJ2BZK3c7dvogBKY7gsJHtH_MxQa96y0.WqZlMCVB5_SbJnZ5WUdkZ20GPgsk73tCPkSSAJq8vTA&dib_tag=se&keywords=lenovo%2Bddr4%2Bram%2B3200Mhz&qid=1713782538&sprefix=lenovo%2Bddr4%2Bram%2B3200mhz%2Caps%2C153&sr=8-2&th=1',
+   image: '/assets/pc/lenovo-ram16gb.png',
+  },
+ ]}
+/>
+
+## Coding
+
+<CardGroup
+ data={[
+  { title: 'Visual Studio Code', description: 'Code Editor & IDE', image: 'skill-icons:vscode-dark', has: 'icon' },
+  { title: 'Github Pages', description: 'Hosting', image: 'simple-icons:githubpages', has: 'icon' },
+ ]}
+/>
+
+## Software
+
+<CardGroup
+ data={[
+  {
+   title: 'Arc',
+   description: 'Web browser',
+   image: 'arc',
+   has: 'icon',
+  },
+  {
+   title: 'Lunacy',
+   description: 'Design Tool',
+   image: 'simple-icons:lunacy',
+   has: 'icon',
+  },
+  {
+   title: 'Discord',
+   description: 'Communication',
+   image: 'skill-icons:discord',
+   has: 'icon',
+  },
+  {
+   title: 'Spotify',
+   description: 'Digital Music Service',
+   image: 'spotify',
+   has: 'icon',
+  },
+  {
+   title: 'Bitwarden',
+   description: 'Password manager',
+   image: 'simple-icons:bitwarden',
+   has: 'icon',
+  },
+  {
+   title: 'OBS',
+   description: 'Open Broadcaster Software',
+   image: 'obs',
+   has: 'icon',
+  },
+ ]}
+/>
