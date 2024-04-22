@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import { Content } from './uses.mdx';
 import '@fontsource/poppins/600.css';
 const title = 'Aryxst';
+
 // 400+600
 ---
 
@@ -22,7 +23,7 @@ const title = 'Aryxst';
  }}
 />
 <Layout {title}>
- <Container class='bg-red-500'>
-  <Content />
+ <Container>
+  <div id='render'><Content /></div>
  </Container>
 </Layout>
