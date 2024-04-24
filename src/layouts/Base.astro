@@ -16,14 +16,14 @@ const { title, noNavbar } = Astro.props;
  <head>
   <title>{title}</title>
   <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
   <link rel='icon' type='image/jpg' href={`${Astro.url.origin}/aryxst-small.jpg`} />
   <meta name='theme-color' content='#49494942' />
   <meta name='generator' content={Astro.generator} />
   <script is:inline defer src='https://analytics.us.umami.is/script.js' data-website-id='92161264-2fa5-42d4-a932-51851f9790bc'></script>
   <ViewTransitions />
  </head>
- <body class="dark">
+ <body class='dark'>
   <slot />
   {!noNavbar && <Navbar />}
   <style is:global>
