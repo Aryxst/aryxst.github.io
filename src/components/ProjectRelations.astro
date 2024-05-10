@@ -9,15 +9,15 @@ const { role, teamType, creationDate } = Astro.props;
 
 <div class='not-prose flex flex-col gap-5 sm:mt-16 sm:flex-row sm:items-center sm:justify-between'>
  <div class='grow-0 flex-wrap md:my-6'>
-  <h3 class='project-relation my-0 text-base font-semibold dark:text-neutral-100'>Role</h3>
+  <h3 class='my-0 text-base font-semibold dark:text-neutral-100'>Role</h3>
   <p class='md:mt-2'>{role}</p>
  </div>
  <div class='grow-0 flex-wrap md:my-6'>
-  <h3 class='project-relation my-0 text-base font-semibold dark:text-neutral-100'>Team</h3>
+  <h3 class='my-0 text-base font-semibold dark:text-neutral-100'>Team</h3>
   <p class='md:mt-2'>{teamType}</p>
  </div>
  <div class='grow-0 flex-wrap md:my-6'>
-  <h3 class='project-relation my-0 font-semibold dark:text-neutral-100'>Date</h3>
+  <h3 class='my-0 font-semibold dark:text-neutral-100'>Date</h3>
   <p class='md:mt-2'>{creationDate.toDateString().slice(4)}</p>
  </div>
 </div>

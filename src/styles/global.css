@@ -1,0 +1,26 @@
+:root {
+ --bg-default: #0e1217;
+ --border: #343841;
+ --off: #12151a;
+ --content-height: calc((var(--content-width) / 16) * 9);
+ --content-width: 70ch;
+}
+.prose {
+ max-width: var(--content-width);
+}
+body,
+*:after,
+*:before {
+ box-sizing: border-box;
+}
+body {
+ font-family: 'Poppins', sans-serif;
+ color: white;
+ background: var(--bg-default);
+ margin: 0;
+ font-weight: 400;
+}
+html {
+ overflow-y: scroll;
+ scrollbar-color: #686868 #424242;
+}

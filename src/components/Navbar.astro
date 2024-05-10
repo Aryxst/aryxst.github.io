@@ -3,20 +3,45 @@ const pathname = Astro.url.pathname;
 ---
 
 <navbar class='fixed left-1/2 w-fit -translate-x-1/2 [&:not([data-hidden])]:bottom-5'
- ><ul class='bar flex h-10 justify-center overflow-hidden rounded-full border border-[var(--steel-blue)] bg-[var(--off)]'>
-  <li class='nav-link w-20 p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname === '/' ? 'true' : 'false'}><a href='/' data-astro-history='replace'>Home</a></li>
-  <li class='nav-link w-20 p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname.includes('/projects') ? 'true' : 'false'}><a href='/projects' data-astro-history='replace'>Projects</a></li>
-  <li class='nav-link w-20 p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname.includes('/blog') ? 'true' : 'false'}><a href='/blog' data-astro-history='replace'>Blog</a></li>
-  <li class='sepatator' data-active={pathname.includes('/blog') ? 'true' : 'false'}></li>
-  <li class='nav-link w-10 p-2 text-center'>...</li>
+ ><ul class='bar flex h-10 justify-center rounded-full border border-[var(--border)]'>
+  <li class='nav-link w-20 rounded-l-full bg-[var(--off)] p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname === '/' ? 'true' : 'false'}>
+   <a href='/' data-astro-history='replace'>Home</a>
+  </li>
+  <li class='nav-link w-20 bg-[var(--off)] p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname.includes('/projects') ? 'true' : 'false'}>
+   <a href='/projects' data-astro-history='replace'>Projects</a>
+  </li>
+  <li class='nav-link w-20 bg-[var(--off)] p-2 text-center transition-colors data-[active=true]:bg-[#303236]' data-active={pathname.includes('/blog') ? 'true' : 'false'}>
+   <a href='/blog' data-astro-history='replace'>Blog</a>
+  </li>
+  <li class='sepatator'></li>
+  <li class='hamburger nav-link group relative flex w-12 items-center justify-center overflow-visible rounded-r-full bg-[var(--off)] px-3 py-2 text-center' data-active='false' transition:persist>
+   <button>
+    <svg width='28' height='28' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'>
+     <path stroke-width='2' stroke='white' class='transition-opacity group-data-[active=true]:opacity-0' d='M4 8 L26 8'></path>
+     <path stroke-width='2' stroke='white' class='origin-center transition-transform group-data-[active=true]:rotate-45' d='M4 15 L26 15'></path>
+     <path stroke-width='2' stroke='white' class='origin-center transition-transform group-data-[active=true]:-rotate-45' d='M4 15 L26 15'></path>
+     <path stroke-width='2' stroke='white' class='transition-opacity group-data-[active=true]:opacity-0' d='M4 22 L26 22'></path>
+    </svg>
+   </button>
+   <ul class='absolute -left-8 bottom-16 hidden h-fit w-32 rounded-lg border border-[var(--border)] bg-[var(--off)] p-1 group-data-[active=true]:block'>
+    <li class='p-1'><a href='/about' data-astro-history='replace'>About</a></li>
+    <li class='p-1'><a href='/uses' data-astro-history='replace'>Uses</a></li>
+   </ul>
+  </li>
  </ul>
 </navbar>
 
 <style>
  .sepatator {
-  background: rgba(52, 56, 65, 1);
+  border: 1px solid rgba(52, 56, 65, 1);
   width: 1px;
   display: block;
   unicode-bidi: isolate;
  }
 </style>
+<script>
+ const hamburger = document.querySelector('.hamburger') as HTMLElement;
+ const hamburgerButton = hamburger.querySelector('button') as HTMLButtonElement;
+
+ hamburgerButton?.addEventListener('click', () => (hamburger.dataset.active = hamburger.dataset.active === 'true' ? 'false' : 'true'));
+</script>

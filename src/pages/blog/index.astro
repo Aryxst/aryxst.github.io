@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/WithMDX.astro';
-import { Content } from '../../mdx/blog.mdx';
+import Layout from '@/layouts/WithMDX.astro';
+import { Content } from '@/mdx/blog.mdx';
 import { SEO } from 'astro-seo';
 const title = 'Blog — Aryxst';
 ---
@@ -18,7 +18,7 @@ const title = 'Blog — Aryxst';
   },
  }}
 />
-<Layout {title} {Content} />
+<Layout {Content} />
 <style is:inline>
  #render > p:first-of-type {
   padding-bottom: 48px;

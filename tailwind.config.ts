@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
-import plugin from 'tailwindcss/plugin';
+
 export default {
- darkMode: 'selector',
+ darkMode: 'class',
  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
  theme: {
   extend: {
@@ -10,15 +10,5 @@ export default {
    },
   },
  },
- plugins: [
-  require('autoprefixer'),
-  require('@tailwindcss/typography'),
-  plugin(function ({ addBase }) {
-   addBase({
-    h1: { fontSize: '32px', lineHeight: '44.8px' },
-    h2: { fontSize: '20px' },
-    h3: { fontSize: '18px' },
-   });
-  }),
- ],
+ plugins: [require('autoprefixer'), require('@tailwindcss/typography')],
 } as Config;

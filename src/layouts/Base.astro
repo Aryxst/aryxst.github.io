@@ -1,20 +1,19 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import Navbar from '../components/Navbar.astro';
+import Navbar from '@/components/Navbar.astro';
+import '@/styles/global.css';
 import '@fontsource/poppins/400.css';
 // 400
 
 interface Props {
- title: string;
  noNavbar?: boolean;
 }
 
-const { title, noNavbar } = Astro.props;
+const { noNavbar } = Astro.props;
 ---
 
 <html lang='en'>
  <head>
-  <title>{title}</title>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <link rel='icon' type='image/jpg' href={`${Astro.url.origin}/aryxst-small.jpg`} />
@@ -26,60 +25,5 @@ const { title, noNavbar } = Astro.props;
  <body class='dark'>
   <slot />
   {!noNavbar && <Navbar />}
-  <style is:global>
-   :root {
-    --bg-default: #0e1217;
-    --steel-blue: #343841;
-    --off: #12151a;
-    --content-height: calc((65ch / 16) * 9);
-    --content-width: 65ch;
-   }
-   body,
-   *:after,
-   *:before {
-    box-sizing: border-box;
-   }
-   body {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    background: var(--bg-default);
-    margin: 0;
-    font-weight: 400;
-   }
-   html {
-    /* WARNING: NOT SUPPORTED ON SAFARI */
-    overflow-y: scroll;
-    scrollbar-color: #686868 #424242;
-   }
-  </style>
-  {
-   /* TODO: Add link animation on route change
-  <script is:inline>
-   document.addEventListener('astro:before-swap', (e) => {
-    const path = new URL(location.href).pathname;
-    localStorage.setItem('last-path', path);
-   });
-   document.addEventListener('astro:after-swap', (e) => {
-    const previousPath = localStorage.getItem('last-path');
-    const currentPath = new URL(location.href).pathname;
-    if (previousPath === currentPath) return;
-    const navLinks = document.querySelectorAll('.nav-link>a');
-    navLinks.forEach((link) => {
-     const href = link.getAttribute('href');
-
-     if (previousPath === '/' && href === '/') {
-      link.parentElement.setAttribute('data-active', 'true');
-      setTimeout(() => {
-       link.parentElement.setAttribute('data-active', 'false');
-      }, 250);
-     } else if (previousPath.includes(href && href !== '/')) {
-      link.parentElement.setAttribute('data-active', 'true');
-      setTimeout(() => {
-       link.parentElement.setAttribute('data-active', 'false');
-      }, 250);
-     }
-    });
-   });*/
-  }
  </body>
 </html>

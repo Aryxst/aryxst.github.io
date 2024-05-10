@@ -1,7 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
-import Layout from '../layouts/WithMDX.astro';
-import { Content } from '../mdx/uses.mdx';
+import Layout from '@/layouts/WithMDX.astro';
+import { Content } from '@/mdx/uses.mdx';
 import '@fontsource/poppins/600.css';
 // 400+600
 
@@ -11,7 +11,7 @@ const title = 'Uses — Aryxst';
 <SEO
  {title}
  canonical={Astro.url}
- description='This is the equipment I use for gaming, programming, everyday.'
+ description='The equipment I use for gaming, programming, everyday.'
  openGraph={{
   basic: {
    title,
@@ -21,4 +21,4 @@ const title = 'Uses — Aryxst';
   },
  }}
 />
-<Layout {title} {Content} />
+<Layout {Content} />

@@ -1,6 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
-import Layout from '../layouts/Base.astro';
+import Layout from '@/layouts/Base.astro';
 import '@fontsource/poppins/800.css';
 // 400+800
 
@@ -20,7 +20,7 @@ const title = 'Aryxst(Old Website)';
   },
  }}
 />
-<Layout title='Aryxst(Old Website)' noNavbar>
+<Layout noNavbar>
  <main class='flex h-screen w-screen items-center sm:justify-center'>
   <div class='flex min-h-[50vh] animate-[fadeIn_2s_1] flex-wrap items-center justify-center text-wrap sm:flex-row-reverse'>
    <img width='256' height='256' src='/aryxst.jpg' alt='My avatar' class='flex h-auto animate-[up-and-down_3s_infinite] rounded-full drop-shadow-[0_20px_20px_rgba(0,0,0,0.25)]' />
@@ -68,11 +68,6 @@ const title = 'Aryxst(Old Website)';
  :root {
   --text-important: #8790c0;
   --text-subtitle: #bdbdbd;
-  --bg-default: #0e1217;
-  --steel-blue: #343841;
-  --off: #12151a;
-  --content-height: calc((65ch / 16) * 9);
-  --content-width: 65ch;
  }
  body {
   font-size: 1.5em;
@@ -82,16 +77,10 @@ const title = 'Aryxst(Old Website)';
  *:before {
   box-sizing: border-box;
  }
- body {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  background: var(--bg-default);
-  margin: 0;
-  font-weight: 400;
- }
  h1 {
   font-weight: 800;
   font-style: normal;
+  font-size: 1.5em;
  }
  @keyframes fadeIn {
   0% {
